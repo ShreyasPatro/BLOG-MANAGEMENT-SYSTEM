@@ -57,13 +57,13 @@ export default function NewArticlePage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Status</Label>
-              <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v ?? "Draft" })}
-                <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  {["Draft", "In Progress", "Under Review", "Published", "Indexed"].map((s) =>
-                    <SelectItem key={s} value={s}>{s}</SelectItem>)}
-                </SelectContent>
-              </Select>
+              <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v ?? "Draft" })}>
+  <SelectTrigger><SelectValue /></SelectTrigger>
+  <SelectContent>
+    {["Draft", "In Progress", "Under Review", "Published", "Indexed"].map((s) =>
+      <SelectItem key={s} value={s}>{s}</SelectItem>)}
+  </SelectContent>
+</Select>
             </div>
             <Field label="Publish date" v={form.publishDate} on={(v) => setForm({ ...form, publishDate: v })} type="date" />
           </div>
