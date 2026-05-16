@@ -148,11 +148,11 @@ function AssignTab() {
         </div>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="space-y-2"><Label>Assign to</Label>
-            <Select value={form.assignedTo} onValueChange={(v) => setForm({ ...form, assignedTo: v ?? "" })}
-              <SelectTrigger><SelectValue placeholder="Select writer" /></SelectTrigger>
-              <SelectContent>{users.map((u) => <SelectItem key={u.email} value={u.email}>{u.name}</SelectItem>)}</SelectContent>
-            </Select>
-          </div>
+  <Select value={form.assignedTo} onValueChange={(v) => setForm({ ...form, assignedTo: v ?? "" })}>
+    <SelectTrigger><SelectValue placeholder="Select writer" /></SelectTrigger>
+    <SelectContent>{users.map((u) => <SelectItem key={u.email} value={u.email}>{u.name}</SelectItem>)}</SelectContent>
+  </Select>
+</div>
           <div className="space-y-2"><Label>Due date</Label>
             <Input type="date" value={form.dueDate} onChange={(e) => setForm({ ...form, dueDate: e.target.value })} />
           </div>
