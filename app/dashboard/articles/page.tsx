@@ -41,8 +41,8 @@ export default function ArticlesPage() {
             <RefreshCw className={loading ? "size-4 animate-spin" : "size-4"} />
           </Button>
           <Button asChild>
-            <Link href="/dashboard/articles/new"><Plus className="size-4 mr-1" />New article</Link>
-          </Button>
+  <Link href="/dashboard/articles/new"><Plus className="size-4 mr-1" />New article</Link>
+</Button>
         </div>
       </div>
 
