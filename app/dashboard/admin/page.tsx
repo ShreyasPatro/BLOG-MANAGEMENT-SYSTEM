@@ -81,7 +81,7 @@ function UsersTab() {
             <div className="space-y-1"><Label>Email</Label><Input value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} /></div>
             <div className="space-y-1"><Label>Password (min 8)</Label><Input type="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} /></div>
             <div className="space-y-1"><Label>Role</Label>
-              <Select value={form.role} onValueChange={(v) => setForm({ ...form, role: v })}>
+              <Select value={form.role} onValueChange={(v) => setForm({ ...form, role: v ?? "writer" })}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="writer">Writer</SelectItem>
