@@ -57,7 +57,7 @@ export default function NewArticlePage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Status</Label>
-              <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v })}>
+              <Select value={form.status} onValueChange={(v) => setForm({ ...form, status: v ?? "Draft" })}
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   {["Draft", "In Progress", "Under Review", "Published", "Indexed"].map((s) =>
