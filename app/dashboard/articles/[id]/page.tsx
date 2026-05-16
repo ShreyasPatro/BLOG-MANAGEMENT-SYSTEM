@@ -40,9 +40,9 @@ export default function ArticlesPage() {
           <Button variant="outline" size="icon" onClick={load} disabled={loading}>
             <RefreshCw className={loading ? "size-4 animate-spin" : "size-4"} />
           </Button>
-          <Button asChild>
-            <Link href="/dashboard/articles/new"><Plus className="size-4 mr-1" />New article</Link>
-          </Button>
+          <Link href="/dashboard/articles/new" className="inline-flex items-center gap-1 rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+  <Plus className="size-4" />New article
+</Link>
         </div>
       </div>
 
