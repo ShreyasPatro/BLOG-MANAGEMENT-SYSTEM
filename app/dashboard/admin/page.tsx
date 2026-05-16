@@ -148,7 +148,7 @@ function AssignTab() {
         </div>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="space-y-2"><Label>Assign to</Label>
-            <Select value={form.assignedTo} onValueChange={(v) => setForm({ ...form, assignedTo: v })}>
+            <Select value={form.assignedTo} onValueChange={(v) => setForm({ ...form, assignedTo: v ?? "" })}
               <SelectTrigger><SelectValue placeholder="Select writer" /></SelectTrigger>
               <SelectContent>{users.map((u) => <SelectItem key={u.email} value={u.email}>{u.name}</SelectItem>)}</SelectContent>
             </Select>
@@ -158,7 +158,7 @@ function AssignTab() {
           </div>
         </div>
         <div className="space-y-2"><Label>Related article (optional)</Label>
-          <Select value={form.articleId} onValueChange={(v) => setForm({ ...form, articleId: v })}>
+          <Select value={form.articleId} onValueChange={(v) => setForm({ ...form, articleId: v ?? "" })}>
             <SelectTrigger><SelectValue placeholder="None" /></SelectTrigger>
             <SelectContent>{articles.map((a) => <SelectItem key={a.id} value={a.id}>{a.title}</SelectItem>)}</SelectContent>
           </Select>
