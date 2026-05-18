@@ -5,6 +5,17 @@
 ### An internal operations dashboard built for the IQOL Technologies content team.
 ### Track articles, monitor GA4 analytics, assign tasks, and manage writers — all in one place.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://blog-management-system-ut7q.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
+[![Google Sheets](https://img.shields.io/badge/Database-Google%20Sheets-green?style=for-the-badge&logo=google-sheets)](https://sheets.google.com)
+[![GA4](https://img.shields.io/badge/Analytics-GA4-orange?style=for-the-badge&logo=google-analytics)](https://analytics.google.com)
+[![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+
+---
+
+![Dashboard Preview](https://via.placeholder.com/1200x600/0f172a/3b82f6?text=IQOL+Blog+%26+SEO+Dashboard)
+
+</div>
 
 ---
 
@@ -567,5 +578,4 @@ Built from scratch in a weekend as an internal tool for the Blog & SEO team.
 Made with ❤️ for the IQOL Technologies team
 
 </div>
- 
  
