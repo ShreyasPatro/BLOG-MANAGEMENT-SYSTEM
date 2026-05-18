@@ -52,49 +52,33 @@ export default function ArticlesPage() {
       </div>
 
       <Card className="overflow-hidden">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Title</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Persona</TableHead>
-              <TableHead>Run ID</TableHead>
-              <TableHead>Assigned</TableHead>
-              <TableHead className="text-right">Pageviews</TableHead>
-              <TableHead>Updated</TableHead>
-              <TableHead></TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filtered.map((a, i) => (
-              <motion.tr
-                key={a.id}
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.02 }}
-                className="border-b hover:bg-accent/40 cursor-pointer"
-              >
-                <TableCell className="font-medium max-w-xs truncate">
-                  <Link href={`/dashboard/articles/${a.id}`} className="hover:text-primary">{a.title}</Link>
-                </TableCell>
-                <TableCell><StatusBadge status={a.status} /></TableCell>
-                <TableCell className="text-sm text-muted-foreground">{a.personaName || "—"}</TableCell>
-                <TableCell className="font-mono text-xs text-muted-foreground">{a.runId || "—"}</TableCell>
-                <TableCell className="text-sm">{a.assignedTo}</TableCell>
-                <TableCell className="text-right tabular-nums">{a.gaPageviews.toLocaleString()}</TableCell>
-                <TableCell className="text-sm text-muted-foreground">{formatRelative(a.gaLastSynced || a.createdAt)}</TableCell>
-                <TableCell>
-                  <a href={a.url} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
-                    <ExternalLink className="size-4" />
-                  </a>
-                </TableCell>
-              </motion.tr>
-            ))}
-            {!loading && filtered.length === 0 && (
-              <TableRow><TableCell colSpan={8} className="text-center py-12 text-muted-foreground">No articles yet. Click "New article" to add one.</TableCell></TableRow>
-            )}
-          </TableBody>
-        </Table>
+        <TableBody>
+  {filtered.map((a, i) => (
+    <TableRow
+      key={a.id}
+      className="border-b hover:bg-accent/40 cursor-pointer"
+      onClick={() => window.location.href = `/dashboard/articles/${a.id}`}
+    >
+      <TableCell className="font-medium max-w-xs truncate">
+        <Link href={`/dashboard/articles/${a.id}`} className="hover:text-primary">{a.title}</Link>
+      </TableCell>
+      <TableCell><StatusBadge status={a.status} /></TableCell>
+      <TableCell className="text-sm text-muted-foreground">{a.personaName || "—"}</TableCell>
+      <TableCell className="font-mono text-xs text-muted-foreground">{a.runId || "—"}</TableCell>
+      <TableCell className="text-sm">{a.assignedTo}</TableCell>
+      <TableCell className="text-right tabular-nums">{a.gaPageviews.toLocaleString()}</TableCell>
+      <TableCell className="text-sm text-muted-foreground">{formatRelative(a.gaLastSynced || a.createdAt)}</TableCell>
+      <TableCell onClick={(e) => e.stopPropagation()}>
+        <a href={a.url} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary">
+          <ExternalLink className="size-4" />
+        </a>
+      </TableCell>
+    </TableRow>
+  ))}
+  {!loading && filtered.length === 0 && (
+    <TableRow><TableCell colSpan={8} className="text-center py-12 text-muted-foreground">No articles yet. Click "New article" to add one.</TableCell></TableRow>
+  )}
+</TableBody>
       </Card>
     </div>
   );
